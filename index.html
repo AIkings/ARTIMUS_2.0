@@ -34,7 +34,7 @@
         <nav class="nav d-flex">
           <div class="logo">
             <a href="/">
-              <h2  style="color: rgb(96, 174, 242);">ARTIMUS-2.O</h2>
+              <h2  style="color: rgb(249, 251, 252);">ARTIMUS-2.O</h2>
             </a>
           </div>
           <ul class="nav-list d-flex">
@@ -77,9 +77,11 @@
       </div>
 
       <div class="content">
-        <h2 id="typing-text" style="color: white;   " ></h2>
-        <img src="./images/main.png" style="height: 400px; width: 400px;" alt="">
-        <h2 style="color: white;  " > Department of Artificial Intelligence and Data science</h2>
+        <h2  style="color: white; margin-bottom: 50PX;  " >WELCOMES YOU TO...</h2>
+        <img src="./im/ban.png" style="height: 200px; width: 400px;" alt="">
+        <h2 style="color: white; margin-top: 150px; " > Department of </h2>
+        <h2 id="typing-text" style="color: white;  " > </h2>
+
 
         <a style="margin-top: 30px;" href="https://forms.gle/1rQrwgDogjD23yXg7" class="btn">Register now</a>
       </div>
@@ -98,7 +100,7 @@
               <h1>About Us</h1>
             </div>
             <p style="color: black;">
-              Welcome to ARTIMUS 2.0 Symposium, Where innovation meets inspiration! Join us for a fusion of technical prowess and non-technical excitement, presented by the Department of Artificial Intelligence And Data Science.
+              Welcome to ARTIMUS 2.0 Symposium, Where innovation meets inspiration! Join us for a fusion of technical prowess and non-technical excitement, presented by the Department of Artificial Intelligence And Data Science / Artificial Intelligence and Machine Learning.
             </p>
             <a href="https://forms.gle/1rQrwgDogjD23yXg7" class="btn">Register Now</a>
           </div>
@@ -106,7 +108,7 @@
             <div class="swiper-container slider-2">
              
                 <div class="swiper-slide">
-                  <img src="ASTRON.jpg" alt="hero image" />
+                  <img src="./im/eb.jpg" alt="hero image" />
                 </div>
                 
               
@@ -288,22 +290,22 @@
                 <img src="./images/g1.JPG" alt="hero image" />
               </div>
               <div class="swiper-slide">
-                <img src="./images/vert-2.jpg" alt="" />
+                <img src="./im/g2.JPG" alt="" />
               </div>
               <div class="swiper-slide">
-                <img src="./images/vert-3.jpg" alt="" />
+                <img src="./im/g3.JPG" alt="" />
               </div>
               <div class="swiper-slide">
-                <img src="./images/vert-4.jpg" alt="" />
+                <img src="./im/g4.JPG" alt="" />
               </div>
               <div class="swiper-slide">
-                <img src="./images/vert-5.jpg" alt="" />
+                <img src="./im/g5.JPG" alt="" />
               </div>
               <div class="swiper-slide">
-                <img src="./images/vert-6.jpg" alt="" />
+                <img src="./im/g6.JPG" alt="" />
               </div>
               <div class="swiper-slide">
-                <img src="./images/vert-7.jpg" alt="" />
+                <img src="./im/g7.JPG" alt="" />
               </div>
             </div>
           </div>
@@ -362,8 +364,8 @@
         <div class="footer-middle">
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Registration</a></li>
+            <li><a href="#Technical">Events</a></li>
+            <li><a href="https://forms.gle/1rQrwgDogjD23yXg7">Registration</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
         </div>
@@ -397,27 +399,32 @@
     <!-- ======== IndexJS ======= -->
     <script src="js/index.js"></script>
     <script>
-      const text = "WELCOMES YOU TO...";
+      const text1 = "Artificial Intelligence and Data Science";
+      const text2 = "Artificial Intelligence and Machine Learning";
+      let currentText = text1;
       let index = 0;
-  
+    
       function type() {
-        document.getElementById("typing-text").innerHTML += text.charAt(index);
+        const typingElement = document.getElementById("typing-text");
+        typingElement.innerHTML += currentText.charAt(index); // Add characters one by one
         index++;
-  
-        // If we reach the end of the text, reset the index
-        if (index === text.length) {
-          index = 0; // Reset index to loop the text
-          // Optionally add a delay before starting again
+    
+        // If we reach the end of the current text
+        if (index === currentText.length) {
           setTimeout(() => {
-            document.getElementById("typing-text").innerHTML = ""; // Clear the text
-            type(); // Restart typing
-          }, 1000); // 1 second delay before restarting (adjust as needed)
+            typingElement.innerHTML = ""; // Clear the text after a pause
+            currentText = currentText === text1 ? text2 : text1; // Switch between text1 and text2
+            index = 0; // Reset index
+            type(); // Restart typing the new text
+          }, 1000); // Pause for 1 second before replacing the text
         } else {
-          setTimeout(type, 100); // Adjust the speed (100ms) as needed
+          setTimeout(type, 100); // Adjust the typing speed (100ms) as needed
         }
       }
-  
+    
       window.onload = type; // Start typing when the window loads
     </script>
+    
+    
   </body>
 </html>
